@@ -20,12 +20,14 @@ makeRows(16,16);
 
 
 function destroyPixels() {
-    console.log()
-    for(i=0; i < (rows * cols); i++) {
-        let divName = "div" + i;
-        let divToBeRemoved = document.getElementById(divName);
-        divToBeRemoved.parentNode.removeChild(divToBeRemoved);
-    }
+    
+    // for(i=0; i < (numberofTotalPixels); i++) {
+    //     let divName = "div" + i;
+    //     let divToBeRemoved = document.getElementById(divName);
+    //     divToBeRemoved.parentNode.removeChild(divToBeRemoved);
+    // }
+    var node = document.getElementById('grid-container');
+    node.innerHTML = '';
 }
 function defaultBackgroundColor() {
     style.backgroundColor = "black";
@@ -45,12 +47,16 @@ function rainbowPixels(e) {
 
 function gridSize() {
 // change amount of pixels in grid
+destroyPixels();
 var choice = prompt("How many squares do you want each side to have?");
+
     if (choice == null || isNaN(choice)) {
         prompt("Please enter a valid number. How many squares do you want each side to be?")
     } else {
-        let px = Number(choice);
-        makeRows(px, px);
+        pixelsPerSide = parseInt(choice, 10);
+        makeRows(pixelsPerSide, pixelsPerSide);
+        numberofTotalPixels = pixelsPerSide * pixelsPerSide;
+        return numberofTotalPixels;
     }
 }
 
