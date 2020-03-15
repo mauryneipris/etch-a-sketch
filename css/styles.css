@@ -1,0 +1,24 @@
+:root {
+    --grid-cols: 1;
+    --grid-rows: 1;
+}
+
+.grid-container {
+    display: grid;
+    
+    background-color:white;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+    width: 45vw;
+    height: 45vw;
+    max-width: 50vw;
+    max-height: 50vw;
+    margin: 0 auto;
+}
+
+.grid-item {
+    
+    
+    border: 0.1px solid rgba(0,0,0, 0.8);
+    text-align: center;
+}
